@@ -15,6 +15,7 @@
         "cookbook"
     ],
     "excludeRecipes": [
+        "u-boot-ram",
         "microsoft",
         "docker",
         "powershell",
