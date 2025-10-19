@@ -9,6 +9,16 @@
 
 This cookbook provides a collection of recipes to help you get started with DeimOS for Intel x86-64 Platform based boards.
 
+## Supported Boards -> Machine
+
+> ⚠️ As this grows we could change the machine name to a more generic name.
+
+> ⚠️ x86 32bit is not supported.
+
+| Board              | Gaia Machine Name   |
+|--------------------|---------------------|
+| x86-64 Intel/amd64 | intel               |
+
 ## Prerequisites
 
 - [Gaia project Gaia Core](https://github.com/gaiaBuildSystem/gaia);
@@ -27,13 +37,3 @@ This cookbook provides a collection of recipes to help you get started with Deim
 ```
 
 This will build DeimOS for Intel x86-64 Platform.
-
-## Supported Boards -> Machine
-
-> ⚠️ As this grows we could change the machine name to a more generic name.
-
-> ⚠️ x86 32bit is not supported.
-
-| Board              | Gaia Machine Name   |
-|--------------------|---------------------|
-| x86-64 Intel/amd64 | intel               |
