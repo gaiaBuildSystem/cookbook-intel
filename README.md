@@ -2,9 +2,9 @@
 
 <p align="center">
     <img
-        src="./assets/img/image.png"
-        alt="Rpi Logo"
-        width="200" />
+        src=".assets/cover.png"
+        alt="Logo"
+        width="400" />
 </p>
 
 This cookbook provides a collection of recipes to help you get started with DeimOS for Intel x86-64 Platform based boards.
@@ -22,13 +22,6 @@ This cookbook provides a collection of recipes to help you get started with Deim
 ## Prerequisites
 
 - [Gaia project Gaia Core](https://github.com/gaiaBuildSystem/gaia);
-
-<p align="center">
-    <img
-        src="https://github.com/gaiaBuildSystem/.github/raw/main/profile/GaiaBuildSystemLogoDebCircle.png"
-        alt="This is a Gaia Project based cookbook"
-        width="120" />
-</p>
 
 ## Build an Image
 
