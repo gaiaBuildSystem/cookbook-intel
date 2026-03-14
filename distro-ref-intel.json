@@ -20,5 +20,6 @@
         "docker",
         "powershell",
         "neofetch"
-    ]
+    ],
+    "$schema": "./schema/distro.json"
 }
