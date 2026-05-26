@@ -1,0 +1,14 @@
+[Unit]
+Description=Zeus Install for Intel/AMD platforms
+After=network-online.target rc-local.service systemd-user-sessions.service getty.target
+Wants=network-online.target
+ConditionKernelCommandLine=zeus_install=1
+
+[Service]
+Type=exec
+EnvironmentFile=-/etc/environment
+ExecStart=/usr/bin/zeus_intel
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,32 @@
+{
+    "name": "zeus-install",
+    "type": "application",
+    "support": [
+        "linux/amd64"
+    ],
+    "priority": 0,
+    "version": "0.0.0",
+    "source": "https://github.com/gaiaBuildSystem/zeus-intel",
+    "ref": {
+        "linux/amd64": "f5fa448af72ca70f6e52b0fe93a4ed2daaa6fc73",
+        "linux/arm64": "f5fa448af72ca70f6e52b0fe93a4ed2daaa6fc73"
+    },
+    "hostAsContainer": true,
+    "containerImage": {
+        "image": "docker.io/pergamos/zig-sdk",
+        "tag": "0.15.1",
+        "extraConfig": "--entrypoint=\"\""
+    },
+    "fetchRecipes": [
+        "fetch.xsh"
+    ],
+    "buildRecipes": [
+        "build.xsh"
+    ],
+    "deployRecipes": [
+        "deploy.xsh"
+    ],
+    "sbomRecipes": [
+        "zeus-install-sbom.ts"
+    ]
+}
