@@ -45,11 +45,11 @@ os.environ['IMAGE_MNT_BOOT'] = _IMAGE_MNT_BOOT
 os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
 # check if we already have the repo cloned
-if not os.path.exists(f"{_BUILD_ROOT}/mars"):
+if not os.path.exists(f"{_BUILD_ROOT}/zeus-intel"):
     os.chdir(f"{_BUILD_ROOT}")
     git clone @(meta['source'])
 
-os.chdir(f"{_BUILD_ROOT}/mars")
+os.chdir(f"{_BUILD_ROOT}/zeus-intel")
 git fetch origin
 git checkout @(meta['ref'][_ARCH])
 
