@@ -63,7 +63,7 @@ sudo cp @(_path)/systemd/zeus-install.service \
 
 str_cmd = (
     f"sudo -k "
-    f"chroot {IMAGE_MNT_ROOT} /bin/bash -c \""
+    f"chroot {_IMAGE_MNT_ROOT} /bin/bash -c \""
     f"systemctl enable zeus-install.service"
     f"\""
 )
