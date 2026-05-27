@@ -11,6 +11,7 @@ $XONSH_SHOW_TRACEBACK = True
 
 import os
 import json
+import subprocess
 import os.path
 from torizon_templates_utils.colors import print,BgColor,Color
 from torizon_templates_utils.errors import Error_Out,Error
