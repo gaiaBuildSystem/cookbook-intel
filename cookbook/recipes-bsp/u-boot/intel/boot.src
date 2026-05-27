@@ -13,6 +13,8 @@ if env exists loglevel
         setenv loglevel 3
 fi
 
+saveenv
+
 env set bootargs root=LABEL:gaia rootfstype=ext4
 env set bootargs ${bootargs} console=ttyS0,115200
 env set bootargs ${bootargs} logo.nologo vt.global_cursor_default=0
