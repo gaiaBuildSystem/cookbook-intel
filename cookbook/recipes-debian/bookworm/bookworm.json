@@ -1,0 +1,13 @@
+{
+    "name": "debian-bookworm",
+    "type": "rootfs",
+    "priority": 1,
+    "support": [
+        "linux/amd64"
+    ],
+    "env": {
+        "BOOT_LABEL": "BOOT-INTEL",
+        "ROOT_LABEL": "gaia"
+    },
+    "merge": true
+}
