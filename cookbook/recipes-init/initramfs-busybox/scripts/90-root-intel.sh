@@ -102,16 +102,30 @@ if [ "${root#LABEL:}" != "$root" ]; then
             else
                 echo "[initramfs] found multiple root candidates: $_candidates"
 
-                # Prefer a partition on removable media for live-install flows.
-                # If none are removable, pick the first deterministically.
-                _dev="$1"
-                for _candidate in "$@"; do
-                    if is_on_removable_disk "$_candidate"; then
-                        _dev="$_candidate"
-                        echo "[initramfs] selected removable-media candidate: $_dev"
-                        break
-                    fi
-                done
+                # Prefer a root candidate on the same disk that holds BOOT-INTEL.
+                # If no match is found, pick the first candidate deterministically.
+                _dev=""
+                _boot_candidates=$(find_label_candidates "BOOT-INTEL")
+                if [ -n "$_boot_candidates" ]; then
+                    echo "[initramfs] BOOT-INTEL found at: $_boot_candidates"
+
+                    for _candidate in "$@"; do
+                        _candidate_disk=$(get_parent_block_dev "$_candidate")
+
+                        for _boot_candidate in $_boot_candidates; do
+                            _boot_disk=$(get_parent_block_dev "$_boot_candidate")
+                            if [ "$_candidate_disk" = "$_boot_disk" ]; then
+                                _dev="$_candidate"
+                                echo "[initramfs] selected candidate on BOOT-INTEL disk: $_dev"
+                                break
+                            fi
+                        done
+
+                        [ -n "$_dev" ] && break
+                    done
+                fi
+
+                [ -z "$_dev" ] && _dev="$1"
             fi
         fi
 
