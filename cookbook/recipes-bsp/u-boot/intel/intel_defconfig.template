@@ -16,6 +16,7 @@ CONFIG_FIT=y
 CONFIG_SHOW_BOOT_PROGRESS=y
 CONFIG_USE_BOOTARGS=y
 CONFIG_BOOTCOMMAND="fatload efi 0:1 ${scriptaddr} boot.scr.uimg; source ${scriptaddr}"
+CONFIG_BOOTCOMMAND="env set efidisk 0; env set efidisk_found 0; for i in 0 1 2 3 4 5 6 7 8 9; do if test \"${efidisk_found}\" = \"0\"; then if fatload efi ${i}:1 ${scriptaddr} ${label_name}; then env set efidisk ${i}; env set efidisk_found 1; fi; fi; done; env set efidisk_found; fatload efi ${efidisk}:1 ${scriptaddr} boot.scr.uimg; source ${scriptaddr}"
 CONFIG_USE_BOOTCOMMAND=y
 CONFIG_AUTOBOOT=y
 CONFIG_AUTOBOOT_KEYED=y
