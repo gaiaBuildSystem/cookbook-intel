@@ -8,7 +8,7 @@
     "version": "0.0.0",
     "source": "https://github.com/gaiaBuildSystem/zeus-intel",
     "ref": {
-        "linux/amd64": "059725c41e2b733fad630dad06cce135a66bd74f"
+        "linux/amd64": "2dd6e78cd1873a55799cc1fc0744b1ba06ef6c9d"
     },
     "hostAsContainer": true,
     "containerImage": {
