@@ -5,7 +5,7 @@
     "version": {
         "major": 0,
         "minor": 0,
-        "patch": 5,
+        "patch": 6,
         "build": 0
     },
     "maxImgSize": 1524,
@@ -19,7 +19,8 @@
         "microsoft",
         "docker",
         "powershell",
-        "neofetch"
+        "neofetch",
+        "zeus-install"
     ],
     "$schema": "./schema/distro.json"
 }
